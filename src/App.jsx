@@ -252,13 +252,13 @@ const Carousel3D = () => {
         <div className="bg-black/30 backdrop-blur-md rounded-2xl p-4 text-white text-sm max-w-xs">
           <div className="flex items-center gap-2 mb-2">
             <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-            <span className="font-semibold">Controls</span>
+            <span className="font-semibold">3D Carousel</span>
           </div>
           <div className="space-y-1 text-xs opacity-80">
             <div>🖱️ <strong>Scroll Up/Down:</strong> Tilt carousel vertically</div>
             <div>🖱️ <strong>Scroll Left/Right:</strong> Rotate carousel</div>
-            <div>📱 <strong>Swipe Up/Down:</strong> Vertical tilt</div>
-            <div>📱 <strong>Swipe Left/Right:</strong> Rotate</div>
+            <div>📱 <strong>Swipe:</strong> Full 3D control</div>
+            <div>✨ <strong>Hover:</strong> Glow effects</div>
             <div>🔄 <strong>Auto-rotate:</strong> Always active</div>
           </div>
         </div>
