@@ -32,17 +32,17 @@ const Carousel3D = () => {
     
     let imageWidth, imageHeight, radius;
     
-    if (width <= 640) { // Mobile
-      imageWidth = Math.min(width * 0.7, 200);
+    if (width <= 550) { // Mobile
+      imageWidth = Math.min(width * 0.7, 100);
       imageHeight = imageWidth * 1.3;
-      radius = Math.max(width * 0.6, 250);
+      radius = Math.max(width * 0.6, 0);
     } else if (width <= 1024) { // Tablet
       imageWidth = Math.min(width * 0.25, 280);
       imageHeight = imageWidth * 1.2;
       radius = Math.max(width * 0.5, 350);
     } else { // Desktop
-      imageWidth = Math.min(width * 0.18, 320);
-      imageHeight = imageWidth * 1.15;
+      imageWidth = Math.min(width * 0.18, 220);
+      imageHeight = imageWidth * 1.2;
       radius = Math.max(width * 0.35, 450);
     }
     
