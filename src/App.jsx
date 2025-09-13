@@ -33,17 +33,17 @@ const Carousel3D = () => {
     let imageWidth, imageHeight, radius;
     
     if (width <= 550) { // Mobile
-      imageWidth = Math.min(width * 0.7, 100);
+      imageWidth = Math.min(width * 0.25, 80);
       imageHeight = imageWidth * 1.3;
-      radius = Math.max(width * 0.6, 0);
+      radius = Math.max(width * 0.35, 160);
     } else if (width <= 1024) { // Tablet
-      imageWidth = Math.min(width * 0.25, 280);
+      imageWidth = Math.min(width * 0.18, 200);
       imageHeight = imageWidth * 1.2;
-      radius = Math.max(width * 0.5, 350);
+      radius = Math.max(width * 0.3, 280);
     } else { // Desktop
-      imageWidth = Math.min(width * 0.18, 220);
+      imageWidth = Math.min(width * 0.12, 180);
       imageHeight = imageWidth * 1.2;
-      radius = Math.max(width * 0.35, 40);
+      radius = Math.max(width * 0.22, 300);
     }
     
     return { imageWidth, imageHeight, radius };
@@ -237,66 +237,6 @@ const Carousel3D = () => {
               height: '100%'
             }}
           >
-            {/* Center 3D Cube */}
-            <div 
-              className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10"
-              style={{ 
-                perspective: '800px',
-                perspectiveOrigin: 'center center'
-              }}
-            >
-              <div 
-                className="relative group"
-                style={{
-                  width: windowSize.width <= 640 ? '120px' : windowSize.width <= 1024 ? '160px' : '200px',
-                  height: windowSize.width <= 640 ? '120px' : windowSize.width <= 1024 ? '160px' : '200px',
-                  transformStyle: 'preserve-3d',
-                  transform: `rotateX(${rotationX * 0.5}deg) rotateY(${totalRotationY * 0.8}deg)`,
-                  transition: 'transform 0.1s ease-out'
-                }}
-              >
-                {/* Cube faces */}
-                {[
-                  { face: 'front', transform: 'translateZ(100px)', image: images[0] },
-                  { face: 'back', transform: 'rotateY(180deg) translateZ(100px)', image: images[1] },
-                  { face: 'right', transform: 'rotateY(90deg) translateZ(100px)', image: images[2] },
-                  { face: 'left', transform: 'rotateY(-90deg) translateZ(100px)', image: images[3] },
-                  { face: 'top', transform: 'rotateX(90deg) translateZ(100px)', image: images[4] },
-                  { face: 'bottom', transform: 'rotateX(-90deg) translateZ(100px)', image: images[5] }
-                ].map((face, index) => (
-                  <div
-                    key={face.face}
-                    className="absolute inset-0"
-                    style={{
-                      transform: face.transform,
-                      transformOrigin: 'center center'
-                    }}
-                  >
-                    <img
-                      src={face.image}
-                      alt={`Cube ${face.face}`}
-                      className="w-full h-full object-cover rounded-lg shadow-xl"
-                      draggable={false}
-                      onDragStart={(e) => e.preventDefault()}
-                      loading="eager"
-                    />
-                    
-                    {/* Face overlay with gradient */}
-                    <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-transparent via-transparent to-black/20 pointer-events-none"></div>
-                  </div>
-                ))}
-                
-                {/* Cube glow on hover */}
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-500 pointer-events-none"
-                     style={{
-                       transform: 'translateZ(51px)',
-                       boxShadow: '0 0 20px rgba(255, 215, 0, 0.6), inset 0 0 20px rgba(255, 215, 0, 0.2)',
-                       borderRadius: '6px'
-                     }}>
-                </div>
-              </div>
-            </div>
-
             {images.map((image, index) => {
               const angle = index * centerAngle;
               const isCenter = Math.abs(((angle - totalRotationY) % 360 + 540) % 360 - 180) < centerAngle / 2;
@@ -324,18 +264,20 @@ const Carousel3D = () => {
                     <img
                       src={image}
                       alt={`Slide ${index + 1}`}
-                      className={`w-full h-full object-cover rounded-xl sm:rounded-2xl shadow-2xl transition-all duration-700 ${
-                        isCenter ? 'scale-110 sm:scale-110' : 'scale-100'
-                      }`}
+                      className="w-full h-full object-cover rounded-xl sm:rounded-2xl shadow-2xl transition-all duration-700"
                       style={{ opacity }}
                       draggable={false}
                       onDragStart={(e) => e.preventDefault()}
                       loading="lazy"
                     />
                     
-                    {/* Enhanced glow for hovered image */}
-                    <div className="absolute inset-0 rounded-xl sm:rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-500 ring-2 sm:ring-4 ring-white/60 shadow-2xl shadow-white/40 pointer-events-none"></div>
-                    <div className="absolute inset-0 rounded-xl sm:rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-500 bg-gradient-to-t from-transparent via-transparent to-white/10 pointer-events-none"></div>
+                    {/* Blue border with pulse glow on hover */}
+                    <div className="absolute inset-0 rounded-xl sm:rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-500 ring-4 ring-blue-500 pointer-events-none"
+                         style={{
+                           boxShadow: '0 0 30px rgba(59, 130, 246, 0.8), 0 0 60px rgba(59, 130, 246, 0.4)',
+                           animation: 'group-hover:pulse 2s infinite'
+                         }}>
+                    </div>
                   </div>
                 </div>
               );
@@ -345,7 +287,7 @@ const Carousel3D = () => {
       </div>
 
       {/* Minimal dot indicators - only visible on larger screens */}
-      <div className="hidden sm:block fixed bottom-6 left-1/2 transform -translate-x-1/2 z-10">
+      {/* <div className="hidden sm:block fixed bottom-6 left-1/2 transform -translate-x-1/2 z-10">
         <div className="flex gap-2 bg-black/20 backdrop-blur-md rounded-full px-4 py-2">
           {images.map((_, index) => (
             <div
@@ -358,7 +300,7 @@ const Carousel3D = () => {
             />
           ))}
         </div>
-      </div>
+      </div> */}
 
       {/* Mobile-friendly touch hint */}
       <div className="sm:hidden fixed bottom-4 left-1/2 transform -translate-x-1/2 z-10">
