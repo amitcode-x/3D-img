@@ -4,15 +4,15 @@ const Carousel3D = () => {
   // Sample images - replace with your own
   const images = [
     'https://i.pinimg.com/736x/69/db/78/69db788af4729b07aed7c0428fdbc570.jpg',
-    'https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&h=600&fit=crop',
-    'https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=800&h=600&fit=crop',
-    'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&h=600&fit=crop',
-    'https://images.unsplash.com/photo-1426604966848-d7adac402bff?w=800&h=600&fit=crop',
-    'https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=800&h=600&fit=crop',
-    'https://images.unsplash.com/photo-1484591974057-265bb767ef71?w=800&h=600&fit=crop',
-    'https://images.unsplash.com/photo-1475924156734-496f6cac6ec1?w=800&h=600&fit=crop',
-    'https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=800&h=600&fit=crop',
-    'https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?w=800&h=600&fit=crop',
+    'https://i.pinimg.com/1200x/50/74/7f/50747fe1b50d7bd57abe8a2ed771d1b5.jpg',
+    'https://i.pinimg.com/1200x/9b/15/8d/9b158df7a836d50596d4e50b61fb30f8.jpg',
+    'https://i.pinimg.com/736x/73/1b/dc/731bdcaf0ea4d85ed993891a24995f63.jpg',
+    'https://i.pinimg.com/736x/73/1b/dc/731bdcaf0ea4d85ed993891a24995f63.jpg',
+    'https://i.pinimg.com/1200x/0a/91/1a/0a911a0fae8557a775a51c5da30bfffd.jpg',
+    'https://i.pinimg.com/1200x/35/0a/25/350a25f8bd8aea64f4cf4366d0b1008a.jpg',
+    'https://i.pinimg.com/1200x/35/0a/25/350a25f8bd8aea64f4cf4366d0b1008a.jpg',
+    'https://i.pinimg.com/736x/78/e0/3c/78e03ca52eb63e0b873c26c71913ede8.jpg',
+    'https://i.pinimg.com/1200x/35/0a/25/350a25f8bd8aea64f4cf4366d0b1008a.jpg',
   ];
 
   const [baseRotationY, setBaseRotationY] = useState(0);
