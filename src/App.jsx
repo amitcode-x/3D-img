@@ -175,7 +175,7 @@ const Carousel3D = () => {
   return (
     <div 
       ref={containerRef}
-      className="fixed inset-0 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 overflow-hidden"
+      className="fixed inset-0 bg-gradient-to-br from-slate-900  to-slate-900 overflow-hidden"
       style={{ height: '100vh', width: '100vw', touchAction: 'none' }}
     >
       {/* Enhanced background particles effect */}
@@ -313,7 +313,7 @@ const Carousel3D = () => {
       <div className="absolute top-4 sm:top-8 left-1/2 transform -translate-x-1/2 z-10">
         <div className="text-center">
           <h1 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-300 to-cyan-300 animate-pulse">
-            3D Gallery
+           <span style={{ color: 'red' }}>❤️</span> Love <span style={{ color: 'red' }}>❤️</span>
           </h1>
         </div>
       </div>
