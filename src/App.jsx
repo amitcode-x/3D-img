@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 const Carousel3D = () => {
   // Sample images - replace with your own
   const images = [
-    'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop',
+    'https://i.pinimg.com/736x/69/db/78/69db788af4729b07aed7c0428fdbc570.jpg',
     'https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&h=600&fit=crop',
     'https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=800&h=600&fit=crop',
     'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&h=600&fit=crop',
