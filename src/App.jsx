@@ -43,7 +43,7 @@ const Carousel3D = () => {
     } else { // Desktop
       imageWidth = Math.min(width * 0.18, 220);
       imageHeight = imageWidth * 1.2;
-      radius = Math.max(width * 0.35, 450);
+      radius = Math.max(width * 0.35, 40);
     }
     
     return { imageWidth, imageHeight, radius };
