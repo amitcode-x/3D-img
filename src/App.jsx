@@ -25,7 +25,7 @@ const Carousel3D = () => {
   const centerAngle = 360 / totalImages;
   const autoRotateSpeed = 0.15;
 
-  // Get responsive dim
+  // Get responsive di
   const getResponsiveDimensions = () => {
     const width = windowSize.width || (typeof window !== 'undefined' ? window.innerWidth : 1920);
     const height = windowSize.height || (typeof window !== 'undefined' ? window.innerHeight : 1080);
